@@ -1,8 +1,16 @@
+/**
+ * The Time class which represents a time on a clock (in military time) including the hours, minutes, and seconds.
+ */
 public class Time {
     private int hour;
     private int minute;
     private int second;
 
+    /**
+     * @param hour an integer representing the amount of hours on the clock.
+     * @param minute an integer representing the amount of minutes on the clock.
+     * @param second an integer representing the amount of seconds on the clock.
+     */
     public Time(int hour, int minute, int second) {
         if (hour >= 24) {
             hour -= 24;
@@ -18,18 +26,30 @@ public class Time {
         this.second = second;
     }
 
+    /**
+     * @return
+     */
     public int getHour() {
         return hour;
     }
 
+    /**
+     * @return
+     */
     public int getMinute() {
         return minute;
     }
 
+    /**
+     * @return
+     */
     public int getSecond() {
         return second;
     }
 
+    /**
+     *
+     */
     public void tick() {
         second++;
         if (second > 59) {
@@ -45,6 +65,9 @@ public class Time {
         }
     }
 
+    /**
+     * @param addedTime
+     */
     public void add (Time addedTime) {
         second += addedTime.getSecond();
         minute += addedTime.getMinute();
@@ -62,6 +85,9 @@ public class Time {
         }
     }
 
+    /**
+     * @return
+     */
     public String toString() {
         String secondAsString = Integer.toString(second);
         String minuteAsString = Integer.toString(minute);
@@ -77,5 +103,4 @@ public class Time {
         }
         return hourAsString + ":" + minuteAsString + ":" + secondAsString;
     }
-
 }

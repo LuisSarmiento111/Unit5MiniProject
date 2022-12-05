@@ -45,6 +45,4 @@ public class TimeRunner {
         time4.add(time6);
         System.out.println(time4);
     }
-
-
 }
